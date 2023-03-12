@@ -4,6 +4,7 @@ jobs:
   build:
     docker:
       - image: pablomontenegrodept/swaggerapi:final
+    working_directory: ~/swagger-petstore
     steps:
       - checkout
       - run: |
