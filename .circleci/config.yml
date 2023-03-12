@@ -6,7 +6,5 @@ jobs:
       - image: swaggerapi/petstore3:unstable
     steps:
       - checkout
-      - run: |
-          chmod +x run.sh
-          ./run.sh
+      - run: curl -X 'GET' 'http://localhost:8080/api/v3/pet/findByStatus?status=available' -H 'accept: application/xml'
            
