@@ -3,13 +3,20 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: pablomontenegrodept/swaggerapi:final
+      - image: openjdk:8-jre-alpine
     working_directory: ~/swagger-petstore
     steps:
       - checkout
-      - run: |
-          ls
-          pwd
+      - run:
+          - name: "testing"
+            - command: |
+                ls 
+                pwd
+                java --version
+                apk update
+                apk add maven
+                
+
           
           
           
