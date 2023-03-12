@@ -8,8 +8,8 @@ jobs:
     steps:
       - checkout
       - run:
-          - name: "testing"
-            - command: |
+          name: "testing"
+          command: |
                 ls 
                 pwd
                 java --version
