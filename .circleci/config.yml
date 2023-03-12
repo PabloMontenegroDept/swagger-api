@@ -7,12 +7,9 @@ jobs:
     steps:
       - checkout
       - run: |
-          mvn install
-          cp target/lib/jetty-runner.jar /swagger-petstore/jetty-runner.jar
-          cp target/*.war /swagger-petstore/server.war
-          cp src/main/resources/openapi.yaml /swagger-petstore/openapi.yaml
-          cp inflector.yaml /swagger-petstore/
-          mvn package jetty:run
+          ls
+          
+          
           
           
            
