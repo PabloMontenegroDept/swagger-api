@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: swaggerapi/petstore3:unstable
+      - image: pablomontenegrodept/swaggerapi:final
     steps:
       - checkout
       - run: |
