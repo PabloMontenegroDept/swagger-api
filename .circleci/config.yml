@@ -6,5 +6,7 @@ jobs:
       - image: swaggerapi/petstore3:unstable
     steps:
       - checkout
-      - run: ./run.sh
+      - run: |
+          chmod +x run.sh
+          ./run.sh
            
