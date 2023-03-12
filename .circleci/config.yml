@@ -14,7 +14,10 @@ jobs:
                 pwd
                 apk update
                 apk add maven
+                apk add openjdk8
                 mvn install
+                mvn package jetty:run
+
                 
 
           
