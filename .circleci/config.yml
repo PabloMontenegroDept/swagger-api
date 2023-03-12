@@ -3,11 +3,20 @@ version: 2.1
 jobs:
   build:
     docker:
+
       -image: swaggerapi/petstore3:unstable
     steps:
       - checkout
+
       - run:
-          - name: "curl"
+          - name: "run test"
           - command: |
               ./run.sh
                  
+
+
+workflows:
+  version: 2
+  api-workflow:
+    jobs:
+      - build:
