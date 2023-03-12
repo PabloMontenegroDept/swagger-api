@@ -9,14 +9,6 @@ jobs:
       - checkout
 
       - run:
-          - name: "run test"
+          - name: run test
           - command: |
               ./run.sh
-                 
-
-
-workflows:
-  version: 2
-  api-workflow:
-    jobs:
-      - build:
