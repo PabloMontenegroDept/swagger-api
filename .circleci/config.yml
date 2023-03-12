@@ -12,9 +12,9 @@ jobs:
           command: |
                 ls 
                 pwd
-                java --version
                 apk update
                 apk add maven
+                mvn install
                 
 
           
