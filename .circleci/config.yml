@@ -3,18 +3,13 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: openjdk:8-jre-alpine
+      - image: okteto/maven:latest
     working_directory: ~/swagger-petstore
     steps:
       - checkout
       - run:
           name: "testing"
           command: |
-                ls 
-                pwd
-                apk update
-                apk add maven
-                apk add openjdk8
                 mvn install
                 mvn package jetty:run
 
