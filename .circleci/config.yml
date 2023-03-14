@@ -19,7 +19,7 @@ jobs:
             mvn install
 
       - save_cache:
-          path:
+          paths: 
             ~/.m2/repository
           key: maven-cache{{ checksum "pom.xml"}}
                 
