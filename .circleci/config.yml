@@ -7,11 +7,23 @@ jobs:
     working_directory: ~/swagger-petstore
     steps:
       - checkout
+      - restore_cache:
+          - keys:
+              - maven-cache-{{ checksum "pom.xml" }}
+              - maven-cache-
       - run:
-          name: "testing"
+          name: "install dependencies"
           command: |
                 mvn install
-                mvn package jetty:run
+
+      - save_cache:
+          path:
+            ~/.m2/repository
+          key: maven-cache{{ checksum "pom.xml"}}
+
+      -run: mvn clean install
+
+                
 
                 
 
