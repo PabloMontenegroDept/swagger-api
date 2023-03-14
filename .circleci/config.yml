@@ -9,16 +9,19 @@ jobs:
       - checkout
         #restoring cache
       - restore_cache:
-          - keys:
-              - maven-cache-{{ checksum "pom.xml" }}
-              - maven-cache-
-      - run: mvn dependency:go-offline
+          keys:
+          - maven-cache-{{ checksum "pom.xml" }}
+          - maven-cache-
+
+      - run:
+          name: "install dependencies"
+          command: |
+            mvn install
+
       - save_cache:
           path:
             ~/.m2/repository
           key: maven-cache{{ checksum "pom.xml"}}
-      - run: mvn clean install
-
                 
 
                 
