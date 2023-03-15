@@ -36,7 +36,9 @@ jobs:
       - run:
           name: "clone testing repository"
           command: |
-          git clone git@github.com:PabloMontenegroDept/api-testing.git
+          echo "git clone git@github.com:PabloMontenegroDept/api-testing.git" > clone.sh
+          chmod -R 777 clone.sh
+          ./clone.sh
           cd testing_CI
 
       - restore_cache:
