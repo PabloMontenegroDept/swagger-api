@@ -37,21 +37,7 @@ jobs:
           name: "clone testing repository"
           command: git clone git@github.com:PabloMontenegroDept/api-testing.git
 
-      - restore_cache:
-          key:
-            - test-dependencies-{{ checksum "requierements.txt"}}
-            - test-dependencies-
 
-      - run:
-          name: "install dependencies"
-          command: |
-          python3 -m venv venv
-          ./venv/bin/activate
-          pip install requierements.txt
-
-      - save_cache:
-          paths: ./venv
-          key: test-dependencies-{{ checksum "requierements.txt"}}
 
       - run:
           name: "perform tests"
