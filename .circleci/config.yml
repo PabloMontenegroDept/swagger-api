@@ -45,13 +45,20 @@ jobs:
             sudo chmod -R 755 venv/
             venv/bin/activate
             pip install -r requierement.txt
+
+      - run:
+          name: "Perform Tests"
+          command: pytest --alluredir=reports
             
 
 workflows:
   version: 2
   api-workflow:
     jobs:
-      - testing
+      - build
+      - testing:
+          requires:
+            - build
 
 
                 
