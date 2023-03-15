@@ -23,7 +23,7 @@ jobs:
           key: maven-cache-{{ checksum "pom.xml"}}
 
       - run:
-          name: "Deploy API"
+          name: Deploy API
           command: mvn package jetty:run
 
   testing:
@@ -59,6 +59,8 @@ workflows:
       - testing:
           requires:
             - build
+            - run:
+                name: Deploy API
 
 
                 
