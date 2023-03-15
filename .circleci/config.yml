@@ -41,7 +41,7 @@ workflows:
   version: 2
   api-workflow:
     jobs:
-      - build:
+      - build
       - testing:
           requires:
             - build
