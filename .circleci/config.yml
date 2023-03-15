@@ -51,7 +51,7 @@ workflows:
       - build:
       - testing:
           requires:
-            -build
+            - build
 
 
 
