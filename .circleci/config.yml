@@ -36,10 +36,7 @@ jobs:
           name: "clone testing repository"
           command: | 
           git clone git@github.com:PabloMontenegroDept/api-testing.git
-          cd testing_CI
-          python3 -m venv venv
-          venv/bin/activate
-          pip install -r requierements.txt
+          pwd
 
 
 
