@@ -38,10 +38,7 @@ jobs:
 
       - run:
           name: "dependencies"
-          command: |
-          ls
-          pwd
-
+          command: ls
 
 
 
