@@ -58,9 +58,9 @@ workflows:
       - build
       - testing:
           requires:
-            - build
-            - run:
-                name: Deploy API
+            - build:
+              - run:
+                  name: Deploy API
 
 
                 
