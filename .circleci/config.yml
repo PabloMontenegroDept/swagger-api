@@ -39,7 +39,7 @@ jobs:
       - run:
           name: "dependencies"
           command: |
-          cd api-testing
+          . cd api-testing
           python3 -m venv venv
 
 
