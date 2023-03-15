@@ -35,11 +35,7 @@ jobs:
 
       - run:
           name: "clone testing repository"
-          command: |
-          echo "git clone git@github.com:PabloMontenegroDept/api-testing.git" > clone.sh
-          chmod -R 777 clone.sh
-          ./clone.sh
-          cd testing_CI
+          command: git clone git@github.com:PabloMontenegroDept/api-testing.git
 
       - restore_cache:
           key:
@@ -50,7 +46,7 @@ jobs:
           name: "install dependencies"
           command: |
           python3 -m venv venv
-          . venv/bin/activate
+          venv/bin/activate
           pip install requierements.txt
 
       - save_cache:
