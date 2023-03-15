@@ -62,6 +62,15 @@ jobs:
           command: pytest --alluredir=reports
 
 
+workflows:
+  version: 2
+  api-workflow:
+    jobs:
+      - build:
+      - testing:
+          requires:
+            -build
+
 
 
 
