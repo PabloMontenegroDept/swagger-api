@@ -7,16 +7,15 @@ jobs:
     working_directory: ~/swagger-petstore
     steps:
       - checkout
-        #restoring cache
+
       - restore_cache:
           keys:
           - maven-cache-{{ checksum "pom.xml" }}
           - maven-cache-
-          -
+
       - run:
           name: "install dependencies"
-          command: |
-            mvn install
+          command: mvn install
 
       - save_cache:
           paths: 
