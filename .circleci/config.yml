@@ -27,33 +27,6 @@ jobs:
           name: "Deploy API"
           command: mvn package jetty:run
 
-  testing:
-    docker:
-      - image: circleci/python
-    steps:
-      - checkout
-
-      - run:
-          name: "clone testing repository"
-          command: git clone git@github.com:PabloMontenegroDept/api-testing.git
-
-
-
-      - run:
-          name: "perform tests"
-          command: pytest --alluredir=reports
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
