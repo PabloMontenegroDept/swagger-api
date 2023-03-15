@@ -41,6 +41,8 @@ jobs:
           command: |
             cd api-testing
             python3 -m venv venv
+            sudo chown -R $USER:$USER venv/
+            sudo chmod -R 755 venv/
             venv/bin/activate
             pip install -r requierements.txt
             
