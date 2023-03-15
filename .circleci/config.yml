@@ -37,7 +37,14 @@ jobs:
           command: git clone git@github.com:PabloMontenegroDept/api-testing.git
 
 
-
+workflows:
+  version: 2
+  api-workflow:
+    jobs:
+      - build:
+      - testing:
+          requires:
+            - build
 
                 
 
