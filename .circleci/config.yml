@@ -47,7 +47,7 @@ jobs:
             pip install -r requierement.txt
 
       - run:
-          name: "Perform Tests"
+          name: "Perform Tests with allure"
           command: pytest --alluredir=reports
             
 
