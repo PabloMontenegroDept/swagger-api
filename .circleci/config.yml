@@ -58,7 +58,6 @@ workflows:
       - build
       - testing:
           requires:
-            - build
           - run:
               name: "Deploy API"
 
