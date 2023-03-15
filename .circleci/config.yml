@@ -49,10 +49,7 @@ workflows:
   version: 2
   api-workflow:
     jobs:
-      - build
-      - testing:
-          requires:
-            - build
+      - testing
 
 
                 
