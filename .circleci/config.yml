@@ -34,26 +34,14 @@ jobs:
 
       - run:
           name: "clone testing repository"
-          command: git clone git@github.com:PabloMontenegroDept/api-testing.git
+          command: | 
+          git clone git@github.com:PabloMontenegroDept/api-testing.git
+          cd testing_CI
+          python3 -m venv venv
+          venv/bin/activate
+          pip install -r requierements.txt
 
-  test1:
-    docker:
-      - image: circleci/python
-    steps:
-      - checkout
-      - run: echo "Hello World"
-  test2:
-    docker:
-      - image: circleci/python
-    steps:
-      - checkout
-      - run: echo "Hello World"
-  test3:
-    docker:
-      - image: circleci/python
-    steps:
-      - checkout
-      - run: echo "Hello World"
+
 
 
 
@@ -66,13 +54,7 @@ workflows:
       - testing:
           requires:
             - build
-      - test1
-      - test2:
-          requires:
-            - test1
-      - test3:
-          requires:
-            - testing
+
 
                 
 
