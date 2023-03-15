@@ -34,9 +34,14 @@ jobs:
 
       - run:
           name: "clone testing repository"
-          command: | 
-          git clone git@github.com:PabloMontenegroDept/api-testing.git
+          command: git clone git@github.com:PabloMontenegroDept/api-testing.git
+
+      - run:
+          name: "dependencies"
+          command: |
+          ls
           pwd
+
 
 
 
