@@ -24,7 +24,7 @@ jobs:
 
       - run:
           name: "Deploy API"
-          command: mvn package jetty:run
+          command: mvn package jetty:run &
 
   testing:
     docker:
